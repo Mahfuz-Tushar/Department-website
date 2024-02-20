@@ -61,7 +61,7 @@ Route::get('/faculty_edit/{id}', [AdminController::class,'faculty_edit']);
 Route::post('/faculty_update/{id}', [AdminController::class,'faculty_update']);
 
 //notice 
-Route::get('admin/notice/', [AdminController::class,'noticeList']);
+Route::get('admin/notice/', [AdminController::class,'noticeList'])->name('noticelist');
 Route::get('admin/notice/create', [AdminController::class,'noticeCreate']);
 Route::get('admin/notice/edit/{id}', [AdminController::class,'noticeEdit']);
 Route::post('admin/notice/update/{id}', [AdminController::class,'noticeUpdate']);

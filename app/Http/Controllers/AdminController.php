@@ -152,6 +152,7 @@ class AdminController extends Controller
 
  //notice 
  public function noticeList()  {
+  dd("notice list");
   $faculties=Faculty::all();
   return view('admin.show_post',compact('faculties'));
   
