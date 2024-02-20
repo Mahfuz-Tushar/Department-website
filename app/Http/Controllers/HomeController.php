@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
 use App\Models\Faculty;
+use App\Models\Notice;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -36,7 +37,8 @@ class HomeController extends Controller
     }
      public function homepage()  {
         $faculties=Faculty::all();
-        return view('home.homepage',compact('faculties'));
+        $notices=Notice::all();
+        return view('home.homepage',compact('faculties','notices'));
         
     }
      public function mission()  {
@@ -69,11 +71,12 @@ class HomeController extends Controller
         return view('home.notice');
             
         }
-        public  function noticedetails()  {
 
-        return view('home.notice_details');
-                
+        public  function noticedetails($id)  {
+        $notice=Notice::find($id);
+        return view('home.notice_details',compact('notice'));
         }
+
         public  function noticedetails1()  {
 
             return view('home.notice_details1');

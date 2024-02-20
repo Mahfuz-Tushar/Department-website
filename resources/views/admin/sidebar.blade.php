@@ -13,7 +13,8 @@
             <li><a href="{{url('post_page')}}"> <i class="icon-grid"></i>Add Faculty </a></li>
             <li><a href="{{url('show_post')}}"> <i class="fa fa-bar-chart"></i> Faculty List </a></li>
             {{-- <li><a href="{{url('faculty_list')}}"> <i class="fa fa-bar-chart"></i>Faculty List </a></li> --}}
-            <li><a href="{{ route('noticelist') }}"> <i class="icon-padnote"></i>Notice </a></li>
+            <li><a href="{{ route('noticelist') }}"> <i class="icon-padnote"></i>Notice List </a></li>
+            <li><a href="{{ route('notice_create') }}"> <i class="icon-padnote"></i>Add Notice </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Page</a></li>

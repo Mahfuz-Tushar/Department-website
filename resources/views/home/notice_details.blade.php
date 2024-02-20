@@ -18,22 +18,22 @@
     <link rel="icon" type="image/png" href="{{ asset('HSTU_files/bsfmstulogo.png') }}">
 
 
-    <link href="./HSTU_files/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./HSTU_files/select_option1.css">
-    <link rel="stylesheet" href="./HSTU_files/font-awesome.min.css">
-    <link rel="stylesheet" href="./HSTU_files/flexslider.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="./HSTU_files/fullcalendar.min.css">
-    <link href="./HSTU_files/css(2)" rel="stylesheet" type="text/css">
-    <link href="./HSTU_files/css(3)" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/HSTU_files/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/select_option1.css') }}">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/flexslider.css') }}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/fullcalendar.min.css') }}">
+    <link href="{{ asset('/HSTU_files/css(2)') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/HSTU_files/css(3)') }}" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="./HSTU_files/css2" rel="stylesheet">
 
-    <link rel="stylesheet" href="./HSTU_files/animate.css">
-    <link rel="stylesheet" href="./HSTU_files/magnific-popup.css">
-    <link rel="stylesheet" href="./HSTU_files/style.css">
-    <link rel="stylesheet" href="./HSTU_files/default.css" id="option_color">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/HSTU_files/default.css') }}" id="option_color">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -322,15 +322,19 @@
             {{-- notice details --}}
             <div class="post recentevent post-3520">
                 <div class="recentevent-single-item">
-                    <h2>Mr. Md. Humaun Kabir, Asst. Prof. of CSE, Attended 12 Days Sakura Science Exchange Program in Japan</h2>
-                    <div class="recentevent-single-info">
-                        <div class="recentevent-date"><span><i class="fa fa-calendar-o"></i> </span></div>
-                        <div class="recentevent-time"><span><i class="fa fa-clock-o"></i> </span></div>
+                    <h2>
+                        {{ $notice->title }}
+                    </h2>
+                    @if ($notice->image )
+                    <div class="recentevent-img p-3">
+                        <img width="700" height="550" src="{{ asset($notice->image )}}" sizes="(max-width: 1600px) 100vw, 1600px">                        
                     </div>
-                    <div class="recentevent-img">
-                        <img width="700" height="550" src="https://bsfmstu.ac.bd/cse/wp-content/uploads/sites/10/2023/03/WhatsApp-Image-2023-03-03-at-10.13.36-PM-1.jpeg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://bsfmstu.ac.bd/cse/wp-content/uploads/sites/10/2023/03/WhatsApp-Image-2023-03-03-at-10.13.36-PM-1.jpeg 1600w, https://bsfmstu.ac.bd/cse/wp-content/uploads/sites/10/2023/03/WhatsApp-Image-2023-03-03-at-10.13.36-PM-1-300x225.jpeg 300w, https://bsfmstu.ac.bd/cse/wp-content/uploads/sites/10/2023/03/WhatsApp-Image-2023-03-03-at-10.13.36-PM-1-768x576.jpeg 768w, https://bsfmstu.ac.bd/cse/wp-content/uploads/sites/10/2023/03/WhatsApp-Image-2023-03-03-at-10.13.36-PM-1-1024x768.jpeg 1024w" sizes="(max-width: 1600px) 100vw, 1600px">                        </div>
+                    @endif
+                    
                     <div class="recentevent-single-content">                            
-                       <p></p><p>Mr. Md. Humaun Kabir, Chairman &amp; Assistant Professor of the CSE Department, successfully attended 12 days (23 February to 05 March, 2023) research collaboration-based program named Sakura Science Exchange Program at Wagatsuma Laboratory, Department of Human Intelligence Systems, Kyushu Institute of Technology (Kyutech), Japan for conducting BCI and Biomedical Signal Processing oriented research.</p>
+                       <p></p><p>
+                        {{ $notice->description }}
+                       </p>
 <p></p>
                     </div>                        
                 </div>
@@ -345,19 +349,19 @@
     </div>
 
     <!-- JQUERY SCRIPTS -->
-    <script src="./HSTU_files/jquery.min.js.download"></script>
-    <script src="./HSTU_files/bootstrap.min.js.download"></script>
-    <script src="./HSTU_files/jquery.flexslider.js.download"></script>
-    <script src="./HSTU_files/jquery.selectbox-0.1.3.min.js.download"></script>
-    <script src="./HSTU_files/jquery.magnific-popup.js.download"></script>
-    <script src="./HSTU_files/waypoints.min.js.download"></script>
-    <script src="./HSTU_files/jquery.counterup.js.download"></script>
-    <script src="./HSTU_files/wow.min.js.download"></script>
-    <script src="./HSTU_files/navbar.js.download"></script>
-    <script src="./HSTU_files/moment.min.js.download"></script>
-    <script src="./HSTU_files/fullcalendar.min.js.download"></script>
-    <script src="./HSTU_files/custom.js.download"></script>
-    <script src="./HSTU_files/custom2.js.download"></script>
+    <script src="{{ asset('/HSTU_files/jquery.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/bootstrap.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/jquery.flexslider.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/jquery.selectbox-0.1.3.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/jquery.magnific-popup.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/waypoints.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/jquery.counterup.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/wow.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/navbar.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/moment.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/fullcalendar.min.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/custom.js.download') }}"></script>
+    <script src="{{ asset('/HSTU_files/custom2.js.download') }}"></script>
 
 
     <script>

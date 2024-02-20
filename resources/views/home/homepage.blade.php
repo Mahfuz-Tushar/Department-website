@@ -394,8 +394,6 @@
 
                         }
                     </style>
-
-
                     @include('home.banner')
 
 
@@ -517,28 +515,23 @@
                                             <th style="text-align:center;">Download/View</th>
                                         </tr>
                                 
+                                        @foreach ($notices as $item)
+                                        <tr>
+                                            <td><p>{{ $item->date }}</p></td>
+                                            <td><a class="notice-title" href=" " style="font-weight: normal; font-size: medium;">{{$item->title}}</a></td>
+                                            <td><a class="btn btn-success" 
+                                                @if ($item->pdf)
+                                                href="{{ asset($item->pdf) }}"
+                                                @else
+                                                href="{{ route('noticeDetails',$item->id) }}"
+                                                @endif
+                                                
+
+                                                >Details</a></td>
+                                        </tr>	
+                                        @endforeach
                                         
-                                            <tr>
-                                                <td><p>January 14, 2024 6:08 PM</p></td>
-                                                <td><a class="notice-title" href=" " style="font-weight: normal; font-size: medium;">Mr. Md. Humaun Kabir, Asst. Prof. of CSE, Attended 12 Days Sakura Science Exchange Program in Japan</a></td>
-                                                <td><a class="btn btn-success" href="{{ url('/details') }}">Details</a></td>
-                                            </tr>	
                                             
-                                        
-                                            <tr>
-                                                <td><p>January 11, 2024 7:12 PM</p></td>
-                                                <td><a class="notice-title" href=" 
-                                                    " style="font-weight: normal; font-size: medium;">Seminar on 4IR in Research and Education
-                                                </a></td>
-                                                <td><a class="btn btn-success" href="{{ url('/details1') }}">Details</a></td>
-                                            </tr>	
-                                            
-                                        
-                                            <tr>
-                                                <td><p>January 10, 2024 6:21 PM</p></td>
-                                                <td><a class="notice-title" href="" style="font-weight: normal; font-size: medium;">Seminar on 4IR in Research and Education</a></td>
-                                                <td><a class="btn btn-success" href=" {{ url('/details1') }}">Details</a></td>
-                                            </tr>	
                                            	                        
                                             
                                                         </tbody>

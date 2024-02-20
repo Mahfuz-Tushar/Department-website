@@ -21,7 +21,7 @@ Route::get('/news', [HomeController::class,'news']);
 Route::get('/gallery', [HomeController::class,'gallery']);
 Route::get('/research', [HomeController::class,'research']);
 Route::get('/notice', [HomeController::class,'notice']);
-Route::get('/details', [HomeController::class,'noticedetails']);
+Route::get('/details/{id}', [HomeController::class,'noticedetails'])->name('noticeDetails');
 Route::get('/details1', [HomeController::class,'noticedetails1']);
 Route::get('/offices & stuff', [HomeController::class,'stuff']);
 Route::get('/mission & vision', [HomeController::class,'mission']);
@@ -62,7 +62,8 @@ Route::post('/faculty_update/{id}', [AdminController::class,'faculty_update']);
 
 //notice 
 Route::get('admin/notice/', [AdminController::class,'noticeList'])->name('noticelist');
-Route::get('admin/notice/create', [AdminController::class,'noticeCreate']);
-Route::get('admin/notice/edit/{id}', [AdminController::class,'noticeEdit']);
-Route::post('admin/notice/update/{id}', [AdminController::class,'noticeUpdate']);
-Route::post('admin/notice/delete/{id}', [AdminController::class,'noticeDelete']);
+Route::get('admin/notice/create', [AdminController::class,'noticeCreate'])->name('notice_create');
+Route::post('admin/notice/store', [AdminController::class,'noticeStore'])->name('notice_store');
+Route::get('admin/notice/edit/{id}', [AdminController::class,'noticeEdit'])->name('notice_edit');
+Route::post('admin/notice/update/{id}', [AdminController::class,'noticeUpdate'])->name('notice_update');
+Route::get('admin/notice/delete/{id}', [AdminController::class,'noticeDelete'])->name('notice_delete');
